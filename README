@@ -1,0 +1,13 @@
+# Home-Assistant---Strava
+Appdaemon code to create some strava stats sensors in Home Assistant
+
+I was using https://github.com/madmic1314/ha_strava mainly to get the all time & YTD stats for my other project https://github.com/brewston/esphome
+That integration stopped working, I had a try at fixing it but failed. I'd previously played with the Strava API and python and found this guide:
+https://medium.com/swlh/using-python-to-connect-to-stravas-api-and-analyse-your-activities-dummies-guide-5f49727aac86
+
+It's a bit of a faff as you need to open a browser session to obtain a one time code, which then allow you to get the access & refresh tokens, luckily that
+guy had some code to check the token expiry and renew it. So it's a one-time faff :-) 
+
+Once I had some basic python working on command line I looked to integrate into HA. I'd previously set up Appdaemon https://github.com/AppDaemon/appdaemon
+in my HA and so it didn't take a huge amount of effort to put the python code in there. I found Appdaemon debugging much easier than HA. It wouldn't take 
+much effort to create a different script to get something from another API and use the value in a HA entity.
